@@ -47,7 +47,7 @@
 
 **1.**ctrl+C 可退出redis客户端
 
-![avatar](E:\book\linux+redis\pic\redis学习1.png)
+![avatar](/pic/redis学习1.png)
 
 //会显示系统的ip地址信息
 
