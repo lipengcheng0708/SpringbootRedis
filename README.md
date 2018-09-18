@@ -156,22 +156,21 @@ http://localhost:3331/redis/delObj?key=aa
 @Service注解：
 
 2. 用代码在1号库中存入了数据后，keys *查询的是0号库，得先进入到1号库，再操作
-    
-    192.168.215.137:6379> keys *
-    1) "bb"
-    192.168.215.137:6379> select 1
-    OK
-    192.168.215.137:6379[1]> keys *
-    1) "bb"
-    2) "aa"
-    3) "\xac\xed\x00\x05t\x00\x02aa"
-    192.168.215.137:6379[1]> flushdb
-    OK
-    192.168.215.137:6379[1]> keys *
-    (empty list or set)
-
-
-
+ 
+``` 
+192.168.215.137:6379> keys *
+1) "bb"
+192.168.215.137:6379> select 1
+OK
+192.168.215.137:6379[1]> keys *
+1) "bb"
+2) "aa"
+3) "\xac\xed\x00\x05t\x00\x02aa"
+192.168.215.137:6379[1]> flushdb
+OK
+192.168.215.137:6379[1]> keys *
+(empty list or set)
+```
 
 
 项目路径： E:\GitProject\SpringbootRedis\demoRedis
