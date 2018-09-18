@@ -20,7 +20,7 @@ cd - // 回到上一目录
 [root@localhost ~]# find / -name lpc 查找lpc目录
 ```		
 
-<h1 id="2">二、linux安装redis流程</h1>
+<h1 id="2">二、Linux安装redis流程</h1>
 
 1. 解压
 
