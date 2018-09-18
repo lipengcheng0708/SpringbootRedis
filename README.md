@@ -170,8 +170,10 @@ OK
 
 运行　config set stop-writes-on-bgsave-error no　命令
 
-    127.0.0.1:6379> config set stop-writes-on-bgsave-error no
-    OK
+```
+127.0.0.1:6379> config set stop-writes-on-bgsave-error no
+OK
+```    
 
 关闭配置项stop-writes-on-bgsave-error解决该问题。
 
