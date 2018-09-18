@@ -45,7 +45,7 @@
 
 注：
 
-**1.**ctrl+C 可退出redis客户端
+**1.** ctrl+C 可退出redis客户端
 
 ![avatar](/pic/redis学习1.png)
 
@@ -53,7 +53,7 @@
 
     192.168.215.137
 
-**2.**Redis默认端口6379，通过当前服务进行查看
+**2.** Redis默认端口6379，通过当前服务进行查看
 
    	ps -ef | grep -i redis
 
