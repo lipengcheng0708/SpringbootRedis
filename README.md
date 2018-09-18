@@ -64,7 +64,7 @@
 
 **1.**确定Redis的配置文件Redis.conf里面的bind项目的值是我们Linux系统的IP地址，不是默认的127.0.0.1
 
-![avatar](E:\book\linux+redis\pic\redis学习2.png)
+![avatar](/pic/redis学习2.png)
 
 命令如下：
 
@@ -90,10 +90,6 @@
     [root@localhost redis]# firewall-cmd --query-port=6379/tcp
     yes
     
-
-
-
-
 # 四、问题 #
 
 1. 添加数据时报错 
@@ -109,10 +105,6 @@
     OK
 
 关闭配置项stop-writes-on-bgsave-error解决该问题。
-
-
-
-2. 
 
 
 # 五、demo练习 #
