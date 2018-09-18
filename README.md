@@ -45,7 +45,7 @@
 
 注：
 
-**1.** ctrl+C 可退出redis客户端
+1. ctrl+C 可退出redis客户端
 
 ![avatar](/pic/redis学习1.png)
 
@@ -53,7 +53,7 @@
 
     192.168.215.137
 
-**2.** Redis默认端口6379，通过当前服务进行查看
+2. Redis默认端口6379，通过当前服务进行查看
 
    	ps -ef | grep -i redis
 
@@ -62,7 +62,7 @@
 
 参考链接：[https://www.cnblogs.com/PatrickLiu/p/8360057.html](https://www.cnblogs.com/PatrickLiu/p/8360057.html)
 
-**1.**确定Redis的配置文件Redis.conf里面的bind项目的值是我们Linux系统的IP地址，不是默认的127.0.0.1
+1. 确定Redis的配置文件Redis.conf里面的bind项目的值是我们Linux系统的IP地址，不是默认的127.0.0.1
 
 ![avatar](/pic/redis学习2.png)
 
@@ -75,13 +75,13 @@
     192.168.215.137:6379> 
 
 
-**2.**在windows命令行中，测试6379端口是否开启
+2. 在windows命令行中，测试6379端口是否开启
 	
     telnet 192.168.215.137 6379
 
 如果未连接成功，则执行步骤3开启端口，重新连接
 
-**3.**开启端口
+3. 开启端口
 
     [root@localhost redis]# firewall-cmd --query-port=6379/tcp
     no
@@ -111,7 +111,7 @@
 
 运行测试
 
-**1.**StringRedisTemplate
+1. StringRedisTemplate
 
 http://localhost:3331/redis/setStr?key=aa&val=name
 
@@ -119,7 +119,7 @@ http://localhost:3331/redis/getStr?key=aa
 
 http://localhost:3331/redis/delStr?key=aa
 
-**2.**RedisTemplate
+2. RedisTemplate
 
 http://localhost:3331/redis/setObj?key=aa&id=1&name=test
 
@@ -130,11 +130,11 @@ http://localhost:3331/redis/delObj?key=aa
 
 问题：
 
-1.忘添加@Service注解
+1. 忘添加@Service注解
 
 @Service注解：
 
-2.用代码在1号库中存入了数据后，keys *查询的是0号库，得先进入到1号库，再操作
+2. 用代码在1号库中存入了数据后，keys *查询的是0号库，得先进入到1号库，再操作
     
     192.168.215.137:6379> keys *
     1) "bb"
