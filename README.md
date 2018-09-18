@@ -4,44 +4,55 @@
 2. 集合的大量运算
 3. 适合做大量数据的排行榜
 
-		cd - // 回到上一目录
-		[root@localhost ~]# find / -name lpc 查找lpc目录
-
+```
+cd - // 回到上一目录
+[root@localhost ~]# find / -name lpc 查找lpc目录
+```		
 
 # 二、linux安装redis流程 #
 
 1. 解压
 
-		tar -zxvf redis-3.0.0.tar.gz
+```
+tar -zxvf redis-3.0.0.tar.gz
+```		
 
 2. 编译
 
-    	cd redis-3.0.0
-    	make
+```
+cd redis-3.0.0
+make
+```	
 
 3. 安装
 
-      	make PREFIX=/usr/local/redis install
+```
+make PREFIX=/usr/local/redis install
+```	
 
 4. 拷贝配置文件
 
-		cd redis-3.0.0
-		cp redis.conf /usr/local/redis/
-		vim /usr/local/redis/redis.conf
-		daemonize yes // 修改no为yes
+```
+cd redis-3.0.0
+cp redis.conf /usr/local/redis/
+vim /usr/local/redis/redis.conf
+daemonize yes // 修改no为yes
+```		
 
 5. 启动
 
-    	cd /usr/local/redis/
-		./bin/redis-server ./redis.conf
-
-
+```
+cd /usr/local/redis/
+./bin/redis-server ./redis.conf
+```
 
 6. 打开客户端
 
-    	./bin/redis-cli -h 127.0.0.1 -p 6379
-    	./bin/redis-cli -h 192.168.215.137 -p 6379
-    	config get bind
+```
+./bin/redis-cli -h 127.0.0.1 -p 6379
+./bin/redis-cli -h 192.168.215.137 -p 6379
+config get bind
+```	
 
 注：
 
@@ -51,12 +62,15 @@
 
 //会显示系统的ip地址信息
 
-    192.168.215.137
+```
+192.168.215.137
+```
 
 2. Redis默认端口6379，通过当前服务进行查看
 
-   	ps -ef | grep -i redis
-
+```
+ps -ef | grep -i redis
+```
 
 # 三、连接客户端RedisDesktopManager/RedisStudio #
 
@@ -68,33 +82,40 @@
 
 命令如下：
 
-    [root@localhost redis]# ./bin/redis-cli -h 192.168.215.137  -p 6379
-    192.168.215.137:6379> config get bind
-    1) "bind"
-    2) ""
-    192.168.215.137:6379> 
-
+```
+[root@localhost redis]# ./bin/redis-cli -h 192.168.215.137  -p 6379
+192.168.215.137:6379> config get bind
+1) "bind"
+2) ""
+192.168.215.137:6379> 
+```
 
 2. 在windows命令行中，测试6379端口是否开启
-	
-    telnet 192.168.215.137 6379
+
+```
+telnet 192.168.215.137 6379
+```    
 
 如果未连接成功，则执行步骤3开启端口，重新连接
 
 3. 开启端口
 
-    [root@localhost redis]# firewall-cmd --query-port=6379/tcp
-    no
-    [root@localhost redis]# firewall-cmd --add-port=6379/tcp
-    success
-    [root@localhost redis]# firewall-cmd --query-port=6379/tcp
-    yes
+```
+[root@localhost redis]# firewall-cmd --query-port=6379/tcp
+no
+[root@localhost redis]# firewall-cmd --add-port=6379/tcp
+success
+[root@localhost redis]# firewall-cmd --query-port=6379/tcp
+yes
+```    
     
 # 四、问题 #
 
 1. 添加数据时报错 
 
-    	(error) MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+````
+(error) MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+````
 
 
 解决方法： [https://blog.csdn.net/song19890528/article/details/38536871](https://blog.csdn.net/song19890528/article/details/38536871)
