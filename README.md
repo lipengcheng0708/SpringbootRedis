@@ -1,4 +1,15 @@
-# 一、散记 #
+
+[一、散记](#1)
+
+[二、Linux安装redis流程](#2)
+
+[三、连接客户端RedisDesktopManager/RedisStudio](#3)
+
+[四、demo练习](#4)
+
+[五、问题](#5)
+
+<h1 id="1">一、散记</h1>
 
 1. redis 非关系层数据库，可以作为关系型数据库（mysql）的缓存存在
 2. 集合的大量运算
@@ -9,7 +20,7 @@ cd - // 回到上一目录
 [root@localhost ~]# find / -name lpc 查找lpc目录
 ```		
 
-# 二、linux安装redis流程 #
+<h1 id="2">二、linux安装redis流程</h1>
 
 1. 解压
 
@@ -71,8 +82,7 @@ config get bind
 ```
 ps -ef | grep -i redis
 ```
-
-# 三、连接客户端RedisDesktopManager/RedisStudio #
+<h1 id="3">三、连接客户端RedisDesktopManager/RedisStudio</h1>
 
 参考链接：[https://www.cnblogs.com/PatrickLiu/p/8360057.html](https://www.cnblogs.com/PatrickLiu/p/8360057.html)
 
@@ -108,27 +118,7 @@ success
 [root@localhost redis]# firewall-cmd --query-port=6379/tcp
 yes
 ```    
-    
-# 四、问题 #
-
-1. 添加数据时报错 
-
-````
-(error) MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
-````
-
-
-解决方法： [https://blog.csdn.net/song19890528/article/details/38536871](https://blog.csdn.net/song19890528/article/details/38536871)
-
-运行　config set stop-writes-on-bgsave-error no　命令
-
-    127.0.0.1:6379> config set stop-writes-on-bgsave-error no
-    OK
-
-关闭配置项stop-writes-on-bgsave-error解决该问题。
-
-
-# 五、demo练习 #
+<h1 id="4">四、demo练习</h1>
 
 运行测试
 
@@ -148,8 +138,7 @@ http://localhost:3331/redis/getObj?key=aa
 
 http://localhost:3331/redis/delObj?key=aa
 
-
-问题：
+<h1 id="5">五、问题</h1>
 
 1. 忘添加@Service注解
 
@@ -171,7 +160,22 @@ OK
 192.168.215.137:6379[1]> keys *
 (empty list or set)
 ```
+3. 添加数据时报错 
 
+````
+(error) MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
+````
+
+解决方法： [https://blog.csdn.net/song19890528/article/details/38536871](https://blog.csdn.net/song19890528/article/details/38536871)
+
+运行　config set stop-writes-on-bgsave-error no　命令
+
+    127.0.0.1:6379> config set stop-writes-on-bgsave-error no
+    OK
+
+关闭配置项stop-writes-on-bgsave-error解决该问题。
+
+----------
 
 项目路径： E:\GitProject\SpringbootRedis\demoRedis
 
