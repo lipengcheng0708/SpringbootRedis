@@ -35,7 +35,7 @@ public class RedisController {
             return "success";
         } catch (Exception e) {
             e.printStackTrace();
-            logger.error("e = "+e.toString());
+            logger.error("setStr: e = "+e.toString());
             return "error";
         }
     }
@@ -63,6 +63,7 @@ public class RedisController {
             redisService.del(key);
             return "success";
         } catch (Exception e) {
+            logger.error("delStr: e = "+e.toString());
             return "error";
         }
     }
@@ -80,7 +81,7 @@ public class RedisController {
             redisService.setObj(key, user);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("setObj: e = "+e.toString());
             return "error";
         }
     }
@@ -108,7 +109,7 @@ public class RedisController {
             redisService.delObj(key);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("delObj: e = "+e.toString());
             return "error";
         }
     }
